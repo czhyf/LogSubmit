@@ -1,0 +1,33 @@
+create database Log;
+
+use Log
+
+类别：[开发组，前端组，运营组，....]
+
+create table class(
+    class_id varchar(10)
+);
+
+
+/*
+    private String className;
+    private String studentName;
+    private String problem;
+    private String date;
+    private String state; */
+
+类别 人员名称 遇到的问题 今天的状态 日期
+
+create table log_ingo(
+className varchar(20),
+studentName varchar(20),
+problem varchar(100),
+state varchar(100),
+date varchar(30))ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+
+
+//清除数据库
+SET SQL_SAFE_UPDATES = 0;
+delete from log_ingo;
+

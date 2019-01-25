@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu360.dao.LogMapper">
+    <!--
+     idea 报红处理
+        File -> setting dialect ,设置成mysql 就可以了
+     -->
+    <!--查询业务概况表-->
+    <select id="select_classNames" resultType="cn.edu360.pojo.Class_name">
+        select class_id from class
+    </select>
+
+    <insert id="storage" parameterType="cn.edu360.pojo.Log_info">
+        insert into log_ingo values(#{className},#{studentName},#{problem},#{state},#{date})
+    </insert>
+
+    <select id="select_log_info" resultType="cn.edu360.pojo.Log_info" parameterType="cn.edu360.pojo.Info" >
+        select * from log_ingo where className=#{className} and date=#{date}
+    </select>
+
+</mapper>
